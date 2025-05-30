@@ -1,0 +1,2855 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Algoritmos Intermedio/Avanzado</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Agrega la librería de iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png" type="image/png">
+
+</head>
+
+<body>
+
+    <div id="cont-global">
+
+        <section id="cont1">
+            <div class="images">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png" alt="JavaScript logo">
+                <!-- <img src="img/node-js-logo.png" alt="Node.js logo"> -->
+            </div>
+            <h1>Algoritmos con JavaScript Vanilla <br> Nivel Intermedio/Avanzado</h1>
+        
+            <h2>Valentina Palacios</h2>
+            <p>Análisis y Desarrollo de Software</p>
+            <p>Número de ficha 3065273</p>
+            <hr>
+        
+            
+        </section>
+
+        <section id="cont2">
+            <h1>1. Sistema de calificacion detallado.</h1>
+        
+            <h2>Estructura condicional IF() ELSE IF().</h2>
+            <p>Descripción: Un colegio necesita un sistema para evaluar el rendimiento de los estudiantes en una materia 
+específica. El sistema debe permitir ingresar 10 notas numéricas (entre 0 y 5). Luego, calculará el promedio 
+de estas notas y determinará si el estudiante aprobó o no (se considera aprobado con un promedio de 3.0 o 
+superior). Finalmente, mostrará la calificación literal correspondiente al promedio, utilizando la siguiente 
+escala: <br>
+● 0.0 a 2.9: "Reprobado" <br>
+● 3.0 a 3.9: "Aceptable" <br>
+● 4.0 a 4.4: "Sobresaliente" <br>
+● 4.5 a 5.0: "Excelente".</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Calificaciones del estudiante.</li></p>
+                
+
+                <h3>Proceso:</h3>
+                <p>Se crean 11 variables, 10 de notas y 1 para el promedio, en base a estos valores se hace una division, se usa un condicional para verificar si el promedio es mayor o igual a 3.0 para verificar si el estudiante esta aprobado o reprobado.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja dos salidas, una si el estudiamte aprobo y otra si el estudiante reprobo.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+                <code>
+                   function evaluarCalificaciones() {
+    alert('Este sistema solicita 10 notas, calcula su promedio y determina el rendimiento del estudiante en base a sus calificaciones.');
+
+    let n1 = parseFloat(prompt("Ingrese la primera calificacion"));
+    let n2 = parseFloat(prompt("Ingrese la segunda calificacion"));
+    let n3 = parseFloat(prompt("Ingrese la tercera calificacion"));
+    let n4 = parseFloat(prompt("Ingrese la cuarta calificacion"));
+    let n5 = parseFloat(prompt("Ingrese la quinta calificacion"));
+    let n6 = parseFloat(prompt("Ingrese la sexta calificacion"));
+    let n7 = parseFloat(prompt("Ingrese la septima calificacion"));
+    let n8 = parseFloat(prompt("Ingrese la octava calificacion"));
+    let n9 = parseFloat(prompt("Ingrese la novena calificacion"));
+    let n10 = parseFloat(prompt("Ingrese la decima calificacion"));
+
+    let promedio = (n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9 + n10) / 10;
+
+    if (promedio < 3.0) {
+        alert('El estudiante reprobro, mejore sus calificaciones.')
+        alert('Su calificacion es: " + promedio')
+        
+    }
+
+    else if (promedio < 4.0) {
+        alert('El estudiante aprobo de manera aceptable.')
+        alert('Su calificacion es : " + promedio')
+        
+    }
+
+    else if ( promedio < 4.5) {
+
+        alert('El estudiante aprobo de manera sobresaliente.')
+        alert('Su calificacion es : " + promedio')
+        
+        
+    }
+
+    else  {
+
+        alert('El estudiante aprobo de manera excelente.')
+        alert('Su calificacion es : " + promedio')
+        
+        
+    }
+     
+}
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="evaluar-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+        <section id="cont3">
+            
+            <h1>2.  Clasificación de Etapas de la Vida con Contexto Educativo </h1>
+        
+            <h2>Estructura condicional IF() ELSE IF().</h2>
+            <p>Descripción: En un contexto educativo, es importante identificar en qué etapa de la vida se encuentran los 
+estudiantes para adaptar las estrategias pedagógicas. Un sistema debe clasificar a un estudiante según su 
+edad al momento de la inscripción en un programa específico: <br>
+● 0 a 12 años: Niño(a) - Enfocado en aprendizaje lúdico y exploración. <br>
+● 13 a 17 años: Adolescente - Etapa de desarrollo del pensamiento crítico y la identidad. <br>
+● 18 a 25 años: Joven Adulto - Transición a la educación superior o al mundo laboral. <br>
+● 26 a 59 años: Adulto - Posiblemente cursando estudios de posgrado o formación continua. <br>
+● 60 años o más: Adulto Mayor - Participación en programas de aprendizaje permanente o por interés 
+personal. </p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Edad</li></p>
+               
+
+                <h3>Proceso:</h3>
+                <p>Se crea una variable para almacenar la edad de la persona, luego creamos un if-else para clasificar la etapa en la que se encuentra en base a la edad.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja una salida con la etapa en la que se encuentra el usuario en base a su edad.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+                   function clasificacionDeEtapas() {
+
+    alert('Este sistema solicita su edad para ver en qué contexto de la vida se encuentra.');
+    let edad = parseInt(prompt("Ingrese la edad del estudiante:"));
+
+    let categoria;
+    let descripcion;
+
+    if (edad >= 0 && edad <= 12) {
+        categoria = "Niño(a)";
+        descripcion = "Enfocado en aprendizaje lúdico y exploración.";
+    } else if (edad >= 13 && edad <= 17) {
+        categoria = "Adolescente";
+        descripcion = "Desarrollo del pensamiento crítico y la identidad.";
+    } else if (edad >= 18 && edad <= 25) {
+        categoria = "Joven Adulto";
+        descripcion = "Transición a la educación superior o al mundo laboral.";
+    } else if (edad >= 26 && edad <= 59) {
+        categoria = "Adulto";
+        descripcion = "Posiblemente cursando estudios de posgrado o formación continua.";
+    } else if (edad >= 60) {
+        categoria = "Adulto Mayor";
+        descripcion = "Participación en programas de aprendizaje permanente o por interés personal.";
+    } else {
+        categoria = "Edad no válida";
+        descripcion = "Por favor, ingrese un número positivo.";
+    }
+
+    alert("Categoría: " + categoria + "\nDescripción: " + descripcion);
+}
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="clasificacion-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+        <section id="cont4">
+           <h1>3. Conversor Flexible de Tiempo (Días y Meses)</h1>
+        
+            <h2>Estructura condicional SWITCH CASE.</h2>
+            <p>Descripción: Un sistema permite al usuario elegir si desea convertir un número a un día de la semana o a un 
+mes del año. Primero, el sistema preguntará al usuario si desea trabajar con "días" o "meses". Luego, 
+solicitará un número. <br>
+● Si el usuario eligió "días" e ingresa un número entre 1 y 7, el sistema mostrará el nombre del día 
+correspondiente (1: Lunes, 2: Martes, ..., 7: Domingo) utilizando una estructura switch case. Si 
+el número está fuera de este rango, mostrará un mensaje de error. <br>
+● Si el usuario eligió "meses" e ingresa un número entre 1 y 12, el sistema mostrará el nombre del 
+mes correspondiente (1: Enero, 2: Febrero, ..., 12: Diciembre) utilizando una estructura switch 
+case. Si el número está fuera de este rango, mostrará un mensaje de error. </p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Dias</li></p>
+                <p><li>Meses</li></p>
+              
+
+                <h3>Proceso:</h3>
+                <p>Se crea una variable para guardar la opcion del usuario,el sistema pregunta al usuario que desea convertir (Dias,Meses), luego le solicita que ingrese un numero, se usa la estructura swicht case para dar opciones dependiendo de la informacion dada por el usuario.</p>  
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema tiene multiples opciones de salida dependiendo de si es Dias o Meses la opcion elegida por el usuario.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+                    function conversorDeTiempo () {
+
+    alert('Este sistema permite realizar conversiones de tiempo.');
+
+    let opcion = prompt("ingrese Dias o Meses");
+    let Numero = parseInt(prompt("Ingrese un numero dependiendo si quiere meses o dias."));
+
+    if (opcion == "Dias") {
+    
+        switch (Numero) {
+        case 1:
+            Dias = "Lunes";
+            break;
+        case 2:
+            Dias = "Martes";
+            break;
+        case 3:
+            Dias = "Miercoles";
+            break;
+        case 4:
+            Dias = "Jueves";
+            break;
+        case 5:
+            Dias = "Viernes";
+            break;
+        case 6:
+            Dias = "Sabado";
+            break;
+        case 7:
+            Dias = "Domingo";
+            break;
+
+        default:
+            alert("ingreso un dia de la semana valido");
+            break;
+    }
+
+    alert("El dia de la semana es: " + Dias);
+
+    }
+   else if(opcion == "Meses"){
+        switch (Numero) {
+        case 1:
+            Meses = "Enero";
+            break;
+        case 2:
+            Meses = "Febrero";
+            break;
+        case 3:
+            Meses = "Marzo";
+            break;
+        case 4:
+            Meses = "Abril";
+            break;
+        case 5:
+            Meses = "Mayo";
+            break;
+        case 6:
+            Meses = "Junio";
+            break;
+        case 7:
+            Meses = "Julio";
+            break;
+        case 8:
+            Meses = "Agosto";
+            break;
+        case 9:
+            Meses = "Septiembre";
+            break;
+        case 10:
+            Meses = "Octubre";
+            break;
+        case 11:
+            Meses = "Noviembre";
+            break;
+        case 12:
+            Meses = "Diciembre";
+            break;
+
+        default:
+            alert("ingrese un mes valido");
+    }
+    alert("El mes es: " + Meses);
+   }
+    }
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="conversor-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+         <section id="cont5">
+            
+            <h1>4.  Menú Interactivo de Operaciones Matemáticas </h1>
+        
+            <h2>Estructura condicional  SWITCH CASE.</h2>
+            <p>Descripción: Un programa ofrece un menú interactivo para realizar operaciones matemáticas básicas. El 
+usuario verá las siguientes opciones: <br>
+1. Sumar dos números <br> 
+2. Restar dos números <br>
+3. Multiplicar dos números <br>
+4. Dividir dos números <br>
+El usuario debe ingresar el número de la opción deseada. Utilizando una estructura switch case, el 
+sistema ejecutará la operación seleccionada. Para las opciones 1 a 4, el sistema solicitará los dos números 
+necesarios para realizar el cálculo y mostrará el resultado
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Primer numero</li></p>
+                <p><li>Segundo numero</li></p>
+               >
+               
+
+                <h3>Proceso:</h3>
+                <p>El sistema muestra 4 opciones en base a esas opciones el usuarioo elige que operacion matematica quiere llevar a cabo, luego se le pide unas variables para cumplir la funcion matematica, se usa la estructura swicht case para identificar la operacion.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja una salida con la solucion matematica.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+       function menuInteractivo(){
+    alert("Este sistema es un menu interactivo que le permite hacer operaciones matematicas.");
+    alert("Señor usuario por favor ingrese un valor")
+
+    let operacion = parseInt(prompt("por favor ingrese el numero de la operacion a realizar: \n 1. SUMAR \n 2.RESTAR \n 3.MULTIPLICAR \n 4.DIVIDIR"))
+
+    let N1 = parseFloat(prompt("Por favor ingrese el primer valor"))
+    let N2 = parseFloat(prompt("Por favor ingrese el segundo valor"))
+
+    let resultado = 0;
+
+    switch (operacion) {
+    case 1:
+        resultado = N1 + N2;
+        alert("la suma es: " + resultado);
+        break;
+    case 2:
+        resultado = N1 - N2;
+        alert("la resta es: " + resultado);
+        break;
+    case 3:
+        resultado = N1 * N2;
+        alert("la multiplicacion es: " + resultado);
+        break;
+    case 4:
+        if (N2 !== 0) {
+            resultado = N1 / N2;
+            alert("la division es: " + resultado);
+        } else {
+            alert("No se puede dividir entre cero.");
+        }
+        break;
+    case 5:
+        alert("Saliendo del programa.");
+        break;
+    default:
+        alert("Opción inválida. Por favor, elija una opción válida.");
+
+}}
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="menu-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+          <section id="cont6">
+            
+            <h1>5.  Cálculo de Tarifa de Servicio Público con Contexto Residencial </h1>
+        
+            <h2>Estructura condicional  SWITCH CASE.</h2>
+            <p>Descripción: Una empresa de servicios públicos en un municipio colombiano aplica diferentes tarifas de 
+acuerdo con el estrato socioeconómico de las viviendas de los usuarios, buscando así una distribución más 
+equitativa de los costos: <br>
+● Estrato 1 (viviendas de bajos recursos): $10.000 <br>
+● Estrato 2 (viviendas de recursos medios bajos): $15.000 <br>
+● Estrato 3 (viviendas de recursos medios): $20.000 <br>
+● Estrato 4 (viviendas de recursos medios altos), 5 y 6 (viviendas de altos recursos): $25.000 <br>
+El sistema debe solicitar al usuario el estrato de su vivienda (un número entero). Utilizando una estructura 
+switch case, el sistema determinará y mostrará el valor de la tarifa a pagar. Si el usuario ingresa un 
+estrato inválido, se mostrará un mensaje de error. 
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Estrato</li></p>
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>El sistema le pide al usuario que ingrese una variable con su estrato, luego con el condicional switch case evaluamos cual es la tarifa de su recibo en base a su estrato.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja una salida con la tarifa del recibo del usuario.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+   function ServicioPublico (){
+
+    alert('Este sistema permite evaluar la tarifa de su recibo en base a su estrato.');
+    let estrato = parseInt(prompt("Ingrese el estrato de su vivienda"))
+
+
+    if (estrato === 1,2,3,4,5,6) {
+
+        switch (estrato) {
+            case 1:
+                estrato = "10.000";
+                
+                break;
+
+            case 2:
+                estrato = "15.000";
+        
+            
+                break;
+
+            case 3: 
+            estrato = "20.000";
+
+
+               break;
+
+            case 4:
+            case 5:
+            case 6:
+                estrato ="25.000"
+
+
+                break;
+
+                 default:
+
+            alert('ingrese un estrato valido')
+
+        }
+
+
+          alert("La tarifa del servicio publico es: " + estrato);
+
+         
+
+        
+    }
+
+
+}
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="estrato-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+          <section id="cont7">
+            
+            <h1>6. Clasificación del Índice de Masa Corporal (IMC) y Recomendaciones de Salud </h1>
+        
+            <h2>Estructura condicional IF() ELSE IF().</h2>
+            <p>Descripción: Un sistema de salud permite a los usuarios conocer su Índice de Masa Corporal (IMC) y la 
+categoría en la que se encuentran, ofreciendo además recomendaciones generales: <br>
+1. El usuario ingresa su peso en kilogramos (kg). <br>
+2. El usuario ingresa su estatura en metros (m). <br>
+3. El sistema calcula el IMC utilizando la fórmula: IMC=peso/estatura**2 <br>
+4. El sistema clasifica al usuario según los siguientes rangos: <br>
+○ IMC < 18.5: Bajo peso - Se recomienda consultar a un nutricionista. <br>
+○ 18.5 ≤ IMC < 25: Normal - ¡Mantén un estilo de vida saludable! <br>
+○ 25 ≤ IMC < 30: Sobrepeso - Considera realizar más actividad física y mejorar tu dieta. <br>
+○ IMC ≥ 30: Obesidad - Es importante buscar asesoramiento médico para un plan de salud 
+integral. 
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Estatura</li></p>
+                <p><li>Peso</li></p>
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>El sistema le pide al usuario que ingrese su altura y su peso, luego con el condicional IF ELSE evaluamos su indice de masa muscular en base a esos datos.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja dos salidas, la primera con el indice de masa muscular y la segunda con el estado fisico de la persona y una recomendacion.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+                function IndiceMasaMuscular (){
+
+
+    alert('Este sistema calcula su indice de masa muscular segun su peso y altura.');
+
+    let peso = parseFloat(prompt("Ingrese su peso"));
+    let altura = parseFloat(prompt("Ingrese su altura"));
+
+
+    let resultado = (peso / (altura *2 ));
+
+
+    if (resultado < 18.5) {
+        alert(' IMC : ' + resultado)
+        alert('Bajo peso - se recomienda ir a un nutricionista.')
+          
+    }
+
+    else if (resultado < 25) {
+         alert(' IMC : ' + resultado)
+        alert(' Normal- !Manten un estilo de vida saludable!')
+        
+    }
+
+    else if (resultado < 30) {
+         alert(' IMC : ' + resultado)
+        alert('Sobrepeso - Considera realizar mas actividad fisica y mejorar tu dieta.')
+        
+    }
+
+    else {
+         alert(' IMC : ' + resultado)
+        resultado = "Obesidad";
+        alert('Obesidad - Es importante buscar asesoramiento medico para un plan de salud integral.') 
+    }
+
+}
+ 
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="IMC-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+          <section id="cont8">
+            
+            <h1>7. Calculadora de Sueldo con Bonificaciones por Hijos en una Empresa  </h1>
+        
+            <h2>Estructura condicional IF() ELSE IF().</h2>
+            <p>Descripción: Una empresa calcula el sueldo total de sus empleados considerando un sueldo base y una 
+bonificación adicional basada en el número de hijos: <br>
+● 0 hijos: Sin bono adicional. <br>
+● 1 o 2 hijos: Bono del 5% sobre el sueldo base. <br>
+● 3 o más hijos: Bono del 10% sobre el sueldo base.  
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Sueldo base</li></p>
+                <p><li>Cantidad de hijos</li></p>
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>El sistema le pide al usuario que ingrese su sueldo base y luego la cantidad de hijos, luego con el condicional IF, ELSE IF evaluamos cual es la bonificacion en base a los datos anteriores.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja una salida con la bonificacion del empleado.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+   function calculadoraDeSueldoConBonificacion() {
+    alert("Este sistema calcula el sueldo total con base en el número de hijos del empleado.");
+
+    let sueldoBase = parseFloat(prompt("Ingrese el sueldo base del empleado:"));
+    let numeroHijos = parseInt(prompt("Ingrese el número de hijos que tiene el empleado:"));
+
+    let bonificacion = 0;
+
+    if (numeroHijos === 0) {
+        bonificacion = 0;
+    } else if (numeroHijos >= 1 && numeroHijos <= 2) {
+        bonificacion = sueldoBase * 0.05;
+    } else if (numeroHijos >= 3) {
+        bonificacion = sueldoBase * 0.10;
+    }
+
+    // Evitar decimales largos sin usar toFixed ni Math.round
+    bonificacion = parseInt(bonificacion * 100) / 100;
+    let sueldoTotal = parseInt((sueldoBase + bonificacion) * 100) / 100;
+
+    alert("Sueldo base: " + sueldoBase + 
+          "\nBonificación: " + bonificacion + 
+          "\nSueldo total a pagar: " + sueldoTotal);
+}
+ 
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="calculadora-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+          <section id="cont9">
+            
+            <h1>8. Clasificación por Tipo de Sangre y Compatibilidad de Donación en un Banco de 
+Sangre </h1>
+        
+            <h2>Estructura condicional SWITCH CASE.</h2>
+            <p>Descripción: Un sistema de un banco de sangre necesita informar a los donantes y receptores sobre las 
+posibles compatibilidades de donación según el tipo de sangre: <br>
+● Tipo de sangre A: Puede donar a A y AB. Puede recibir de A y O. <br>
+● Tipo de sangre B: Puede donar a B y AB. Puede recibir de B y O. <br>
+● Tipo de sangre AB: Puede donar a AB. Puede recibir de A, B, AB y O (receptor universal). <br>
+● Tipo de sangre O: Puede donar a A, B, AB y O (donante universal). Puede recibir de O. <br>
+El sistema solicitará al usuario que ingrese su tipo de sangre (A, B, AB o O). Utilizando una estructura 
+switch case, el sistema mostrará a qué tipos de sangre puede donar y de qué tipos puede recibir.  
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Tipo de sangre</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>El sistema le pide al usuario que ingrese su tipo de sangre luego con el condiconal SWITCH CASE evaluamos la compatibilidad, tanto receptiva como donantiva.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja una salida con la compatibilidad receptiva y donativa del usuario.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+function clasificacionSangre() {
+
+    alert("Este sistema te permite conocer a quien le puedes donar sangre y de quien puedes recibir.");
+    let tipoSangre = prompt("Ingrese su tipo de sangre (A, B, AB, O):");
+
+    let donanteCompatible;
+    let receptorCompatible;
+
+    switch (tipoSangre) {
+        case "A":
+            donanteCompatible = "A, AB";
+            receptorCompatible = "A, O";
+            break;
+        case "B":
+            donanteCompatible = "B, AB";
+            receptorCompatible = "B, O";
+            break;
+        case "AB":
+            donanteCompatible = "AB";
+            receptorCompatible = "A, B, AB, O";
+            break;
+        case "O":
+            donanteCompatible = "A, B, AB, O";
+            receptorCompatible = "O";
+            break;
+        default:
+            alert("Tipo de sangre inválido.");
+            return;
+    }
+
+    alert("Puede donar sangre a: " + donanteCompatible + "\nPuede recibir sangre de: " + receptorCompatible);
+}
+ 
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="TipoDeSangre-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+          <section id="cont10">
+            
+            <h1>9.Calculadora de Notas con Nivel de Desempeño Detallado en un Curso </h1>
+        
+            <h2>Estructura condicional IF() ELSE IF().</h2>
+            <p>Descripción: En un curso, se evalúa a los estudiantes a través de tres notas parciales. El sistema calculará el 
+promedio de estas tres notas (cada una entre 0 y 5) y determinará el nivel de desempeño del estudiante 
+según la siguiente escala: <br>
+● Promedio < 3.0: Nivel Bajo - Requiere reforzar los conocimientos. <br>
+● 3.0 ≤ Promedio < 3.9: Nivel Básico - Cumple con los aprendizajes fundamentales. <br>
+● 4.0 ≤ Promedio ≤ 4.5: Nivel Alto - Demuestra un buen dominio de los contenidos. <br> 
+● Promedio > 4.5: Nivel Superior - Alcanza un desempeño sobresaliente. 
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Calificaciones del estudiante.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>El sistema le pide al usuario que ingrese tres notas parciales luego con el condicional IF, ELSE IF, evaluamos el promedio del estudiante en base a estas tres notas.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja dos salidas, la primera con el nivel academico del estudiante y la segunda con la nota del estudiante.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+function Calculadora (){
+
+    alert("Este algoritmo le permite calcular su desempeño basado en tres notas parciales.")
+
+    let n1 = parseFloat(prompt("Ingrese la primera calificacion"));
+    let n2 = parseFloat(prompt("Ingrese la segunda calificacion"));
+    let n3 = parseFloat(prompt("Ingrese la tercera calificacion"));
+
+
+    let promedio = (n1 + n2 + n3) / 3;
+
+
+    if (promedio < 3.0) {
+        alert('Nivel bajo - Requiere reforzar los conocimientos.')
+        alert('Su calificacion es: " + promedio')
+        
+    }
+
+    else if (promedio < 3.9) {
+        alert('Nivel basico - Cumple con los aprendizajes fundamentales.')
+        alert('Su calificacion es: " + promedio')
+        
+    }
+
+    else if (promedio < 4.5) {
+        alert('Nivel alto - Demuestra un buen dominio de los contenidos.')
+        alert('Su calificacion es: " + promedio')
+        
+    }
+
+   else if (promedio > 4.5) {
+    alert('Nivel superior - Alcanza un desempeño sobresaliente.')
+    
+   }
+
+
+    alert("Su nota es: " + promedio);
+
+
+}
+ 
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="Calculadora-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+          <section id="cont11">
+            
+            <h1>10. Descuento por Tipo de Cliente en una Tienda con Detalles de la Compra  </h1>
+        
+            <h2>Estructura condicional SWITCH CASE.</h2>
+            <p>Descripción: Una tienda aplica diferentes descuentos a sus clientes según su tipo, buscando fidelizar a los 
+clientes frecuentes y VIP. El sistema debe solicitar al usuario el tipo de cliente ("nuevo", "frecuente" o "vip") 
+y el valor total de su compra. <br>
+● Cliente nuevo: 5% de descuento. <br>
+● Cliente frecuente: 10% de descuento. <br> 
+● Cliente VIP: 20% de descuento. <br>
+Utilizando una estructura switch case, el sistema calculará el descuento aplicable, el valor del 
+descuento y el valor total a pagar por el cliente. Si el tipo de cliente ingresado no es válido, se mostrará un 
+mensaje de error. 
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Frecuencia con la que visita la tienda.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>El sistema le pide al usuario que ingrese la frecuencia con la que visita la tienda, luego usamos el condicional SWITCH CASE para indicarle cual es su tipo de descuento en base a la frecuencia con la que visita la tienda.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja una salida donde indica el porcentaje de descuento obtenido.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+function Tienda (){
+
+alert('Este algoritmo permite ofrecer descuentos en base a la frecuencia en la que es visitada la tienda.')
+
+let frecuencia = prompt("Ingrese la frecuencia con la que visita la tienda, \n 1.Nuevo, \n 2.Frecuente, \n 3.Vip.");
+
+let descuento = 0;
+
+switch (frecuencia) {
+    case "1": 
+         descuento = "5% de descuento";
+        
+        break;
+
+
+    case "2" :
+         descuento = "10% de descuento";
+
+        break;
+
+    case "3": 
+         descuento = "15% de descuento";
+
+         break;
+
+        default:
+}
+
+alert("El descuento aplicado es: " + descuento);
+
+
+}
+ 
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="Tienda-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+        <section id="cont12">
+            
+            <h1>11. Frutas   </h1>
+        
+            <h2>Arrives.</h2>
+            <p>Explicacion arrives.
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Frutas.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Asignar frutas</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja varias salidas con frutas.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+function explicacionArrives (){ 
+    let frutas = ["Manzanas", "Melon", "Pera", "Fresas", "Sandia"];
+
+
+    // PODEMOS ACCEDER A LOS ELEMENTOS DEL ARREGLO UNO A LA VEZ
+
+    alert (frutas[1]);
+
+    // PODEMOS ACCEDER A TODOS LOS ELEMENTOS DEL ARREGLO CON JOIN
+    alert (frutas.join (" - "));
+
+
+    // PARA RECORRER TODOS LOS DATOS DE UN ARREGLO NECESITAMOS USAR UN FOR
+
+    alert(frutas.length);
+
+    for ( let i = 0; i < frutas.length; i++) {
+        alert( "La fruta en la posicion" + i + "es" + frutas[i])
+        
+    }
+
+    // INSERTAR DATOS A UN ARREGLO AL FINALS
+
+    let nuevaFruta = prompt("Ingrese una fruta diferente");
+
+    frutas.push(nuevaFruta);
+    alert(frutas.join(" - "));
+
+// INSERTAR DATOS A UN ARREGLO AL PRINCIPIO
+
+    let frutaNueva2 = prompt("Ingrese  una fruta para poner al principio ");
+    frutas.unshift(frutaNueva2);
+    alert(frutas.length);
+    alert(frutas.join(" / "));
+   
+// COMO ELIMINAR UN DATO SEGUN SU POSICION O INDEX
+    frutas.splice(1,1); 
+    alert(frutas.join(" - "));
+
+
+// COMO ELIMINAR EL ULTIMO DATO DEL ARREGLO
+
+frutas.pop();
+alert(frutas.join(" - "))
+
+
+// ELIMINAR EL PRIMER DATO DE UN ARREGLO
+
+frutas.shift();
+alert(frutas.join(" - "))
+
+// EDITAR O REEMPLAZAR EL VALOR DE UNA POSICION O INDEX
+
+frutas[2]= "Banana";
+alert(frutas.join(" - "))
+
+
+}
+ 
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="frutas-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+        <section id="cont13">
+            
+            <h1>11. Contador de Números Positivos y Negativos   </h1>
+        
+            <h2>Estructuras repetitivas (bucles): WHILE.</h2>
+            <p>Descripción: El sistema debe permitir ingresar una serie de números hasta que el usuario introduzca el 
+número 0. Por cada número, debe contar cuántos positivos y cuántos negativos se han ingresado 
+(excluyendo el cero). 
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Numeros.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se le pide al usuario que ingrese un numero, luego estos numeros se iran contando hasta que el usuario ingrese el numero cero para eso usamos el bucle WHILE.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja una salida donde indica la cantidad de numeros contados antes de llegar al 0.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+                function PositivosNegativos () {
+
+    alert ("SEÑOR USUARIO ESTE SISTEMA LE PERMITE LA CONTABILIDAD DE LOS NUMEROS TANTO COMO POSITIVOS COMO NEGATIVOS EXCLUYENDO EL CERO")
+    let positivos = 0 
+    let negativos = 0
+
+
+    //PEDIMOS AL USUARIO QUE INGRESE UN NUMERO
+
+    let numero  = parseFloat(prompt("INGRESE UN NUMERO POSITIVO O NEGATIVO, PRESIONE 0 PARA DETENER O FINALIZAR"));
+    while (numero !== 0 ) {
+         
+        if (numero > 0) {
+            positivos + positivos + 1;
+            
+        }
+
+        else if (numero < 0) {
+            negativos + negativos +1;
+            
+        }
+        numero = parseFloat(prompt("POR FAVOR INGRESE OTRO NUMERO  U OPRIMA CERO PARA DETENER O FINALIZAR"))
+    }
+
+    alert("EL TOTAL DE NUMEROS POSITIVOS ES: " + positivos + "\n EL TOTAL DE NEGATIVOS ES:" + negativos)
+}
+
+ 
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="positivos-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+         <section id="cont14">
+            
+            <h1>12. Validador de Contraseña con Intentos Limitados </h1>
+        
+            <h2>Estructuras repetitivas (bucles): WHILE.</h2>
+            <p>Descripción: El sistema permite al usuario ingresar su contraseña hasta 3 intentos. Si la contraseña correcta 
+es "s3cret0", debe mostrar un mensaje de bienvenida. Si falla en los 3 intentos, debe bloquear el acceso. 
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Contraseña.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se le indica al usuario que ingrese una contraseña y con el bucle WHILE mientras la contraseña no sea correcta no podra acceder al sistema.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja una salida donde indica si se le permite o se le niega el acceso al sistema.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+                function validarContrasena() {
+    alert("Este sistema le permite validar su contraseña.");
+    let contrasena = prompt("Ingrese su contrasena:");
+    let contraseaCorrecta = "s3cret0"; // CAMBIA ESTO POR LA CONTRASEÑA
+    const contrasenaCorrecta = "s3cret0"; 
+// CAMBIA ESTO POR LA CONTRASEÑA
+    let intentos = 0;
+    const maxIntentos = 3;
+
+    while (intentos < maxIntentos) {
+        if (contrasena === contrasenaCorrecta) {
+            alert("Contrasena válida. Acceso concedido.");
+            return;
+        } else {
+            intentos++;
+            alert("Contrasena incorrecta. Intento " + intentos + " de " + maxIntentos);
+            contrasena = prompt("Ingrese su contrasena:");
+        }
+    }
+
+    alert("Demasiados intentos fallidos. Acceso denegado.");
+}
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="contrasena-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+         <section id="cont15">
+            
+            <h1>13. Acumulador de Compras hasta Monto Límite  </h1>
+        
+            <h2>Estructuras repetitivas (bucles): WHILE.</h2>
+            <p>Descripción: Un cliente puede ingresar el valor de productos que va comprando. El sistema acumula los 
+valores hasta llegar o superar los $100.000, momento en el cual termina y muestra el total y la cantidad de 
+productos comprados. 
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Precios de los productos.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se le pide al usuario que ingrese el monto de la compra y luego con el bucle WHILE hacemos que se repita hasta que el monto de la compra no sea 100.000.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja varias salidas dependiendo de los montos que establezca el usuario.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+ function AcumuladorDeCompras() {
+    alert("Este sistema acumula el total de sus compras.");
+
+    let totalCompras = 0; // Inicializamos el total en 0
+    let cantidadCompras = 0; // Inicializamos la cantidad de compras en 0
+
+    while (totalCompras < 100000) {
+        let compra = parseFloat(prompt("Ingrese el monto de la compra:"));
+        totalCompras += compra;
+        cantidadCompras++;
+    }
+
+    alert("El total acumulado de sus compras es: $" + totalCompras);
+    alert("Cantidad de compras realizadas: " + cantidadCompras);
+}
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="acumulador-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+         <section id="cont16">
+            
+            <h1>14. Ingreso de Estudiantes hasta Cupo Máximo   </h1>
+        
+            <h2>Estructuras repetitivas (bucles): WHILE.</h2>
+            <p>Descripción: Un sistema educativo debe registrar estudiantes hasta completar un cupo máximo de 30 
+personas o hasta que el usuario decida detener el ingreso con una palabra clave ("fin"). 
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Nombre del estudiante.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Usamos el bucle while para registrar los estudiantes.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja una salida con los nombres de los 30 estudiantes.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+                function ingresoEstudiantes() {
+
+    alert("Este sistema permite ingresar estudiantes hasta un cupo máximo de 30.");
+
+    let cupoMaximo = 30;
+    let estudiantes = [];
+    let cantidadEstudiantes = 0;
+
+    while (cantidadEstudiantes < cupoMaximo) {
+        let nombreEstudiante = prompt("Ingrese el nombre del estudiante:");
+        estudiantes.push(nombreEstudiante);
+        cantidadEstudiantes++;
+    }
+
+    alert("Se han ingresado " + cantidadEstudiantes + " estudiantes.");
+    alert("Lista de estudiantes: " + estudiantes.join(", "));
+}
+
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="estudiantes-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+         <section id="cont17">
+            
+            <h1>15. Tabla de Multiplicar Personalizada </h1>
+        
+            <h2>Estructuras repetitivas (bucles): FOR.</h2>
+            <p>Descripción: El usuario ingresa un número y el sistema imprime su tabla de multiplicar del 1 al 20. 
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Numeros a multiplicar.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se solicita un numero, se utiliza el bucle FOR para multiplicar ese numero desde el 1 hasta el 20.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja una salida con una tabla de multiplicacion.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+ function tablaMultiplicarPersonalizada() {
+    alert("Este sistema genera una tabla de multiplicar personalizada.");
+
+    let numero = parseInt(prompt("Ingrese el número para generar la tabla de multiplicar:"));
+    let limite = parseInt(prompt("Ingrese el límite de la tabla:"));
+
+    let tabla = "";
+    for (let i = 1; i <= limite; i++) {
+        tabla += numero + " x " + i + " = " + (numero * i) + "\n";
+    }
+
+    alert("Tabla de multiplicar del " + numero + ":\n" + tabla);
+}
+
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="multiplicar-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+           <section id="cont18">
+            
+            <h1>16. Suma de los Primeros N Números Naturales</h1>
+        
+            <h2>Estructuras repetitivas (bucles): FOR.</h2>
+            <p>Descripción: El usuario indica cuántos números quiere sumar (ej: 5) y el sistema calcula la suma de 1 + 2 + 3 
++ ... + N.  
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Numeros naturales.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se solicita un numero, se utiliza el bucle FOR para contar los numeros.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja una suma de los numeros naturales.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+function sumaDeNumerosNaturales() {
+    alert("Este sistema suma los primeros números naturales hasta un límite.");
+
+    // AQUI EL USUARIO INGRESA UN NUMERO EN EL CUAL 
+
+    let limite = parseInt(prompt("Ingrese el límite para la suma:"));
+    let suma = 0;
+
+    for (let i = 1; i <= limite; i++) {
+        suma += i;
+    }
+
+    alert("La suma de los primeros " + limite + " números naturales es: " + suma);
+}
+
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="sumaNumeros-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+        <section id="cont19">
+            
+            <h1>17. Contador de Caracteres en Palabras </h1>
+        
+            <h2>Estructuras repetitivas (bucles): FOR.</h2>
+            <p>Descripción: El usuario indica cuántas palabras ingresará. Por cada una, el sistema muestra cuántos 
+caracteres tiene.   
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Numeros por palabra.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se solicita una palabra y se utiliza el bucle FOR para repetir el proceso segun la cantidad indicada, en cada iteracion se solicita una palabra para contar cuantos caracteres tiene.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja una suma de cacteres por palabra.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+function contarcaracteresPorPalabras() {
+    alert("Señor usuario este sistema le permitira leer cada palabra y contar sus caracteres.");
+    let cantidadPalabras = parseInt(prompt("¿Cuantas palabras desea ingresar"));
+
+    for (let contador = 1; contador <= cantidadPalabras; contador = contador +1) {
+         
+        let palabra = prompt("INGRESE LA PALABRA #" + contador + " :");
+        let cantidadCaracteres = palabra.length;
+
+        alert( " LA PALABRA " + palabra + " tiene un tatal de " + cantidadCaracteres+ " de caracteres" );
+
+    }
+}
+
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="contador-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+         <section id="cont20">
+            
+            <h1>18.  Generador de Secuencia de Números Pares  </h1>
+        
+            <h2>Estructuras repetitivas (bucles): FOR.</h2>
+            <p>Descripción: El sistema genera y muestra los primeros N números pares (empezando desde 2).   
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Numeros.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se empieza desde el numero 2, luego utilizamos el bucle FOR para generar los numeros pares de 2 en 2.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja el total de numeros pares.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+                function generarPares() {
+    alert("Este sistema genera una secuencia de números pares.");
+
+    let limite = parseInt(prompt("Ingrese el límite para la secuencia de números pares:"));
+    let secuencia = "";
+
+    for (let i = 0; i <= limite; i += 2) {
+        secuencia += i + " ";
+    }
+
+    alert("Secuencia de números pares hasta " + limite + ":\n" + secuencia);
+}
+
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="pares-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+          <section id="cont21">
+            
+            <h1>19.  Practica objetos </h1>
+        
+            <h2>Objetos.</h2>
+            <p>  Practica de objetos.
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Nombres.</li></p>
+                <p><li>Apellidos.</li></p>
+                <p><li>Programa.</li></p>
+                <p><li>Ficha.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Aprendemos a como acceder a todos los objetos y a los datos de este.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Como modificar un valor de alguna clave o atributo.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+function PracticaObjetos(){
+    let aprendiz = {
+        nombre : "Valentina",
+        apellidos : "Palacios",
+        programa :"ADSO",
+        ficha : 3065273,
+    }
+
+    // COMO ACCEDER A UN DATO DEL OBJETO
+
+    
+    //alert(aprendiz.apelllidos);
+    // alert(aprndiz["nombres"]);
+    let apellidos = aprendiz.apellidos;
+
+    // como acceder a todos los datos del objeo
+
+    for (let clave in aprendiz) {
+        alert(clave + " : " + aprendiz[clave]);
+        
+    }
+
+    // COMO INSERTAR VALORES A UN OBKJETO
+
+    aprendiz.edad = parseInt(prompt("ingrese la edad"));
+
+    // como modificar un valor de alguna clave o atributo
+
+    aprendiz.apellidos =  prompt("ingrese su apellido")
+
+      // como eliminar una clave y su valor
+      delete aprendiz.contrato
+
+        for (let clave in aprenduz) {
+        alert(clave + " : " + aprendiz[clave]);
+        
+    }
+
+    // como eliminar una clave y su valor
+
+    
+
+}
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="objetos-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+           <section id="cont22">
+            
+            <h1>20. Ejercicio de usuarios. </h1>
+        
+            <h2>Ejercicio con arreglos</h2>
+            <p> Este ejercicio contiene arreglos.
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Nombre.</li></p>
+                <p><li>Email.</li></p>
+                <p><li>Clave.</li></p>
+                <p><li>Rol.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Usamos arreglos.</p>
+                
+        
+               
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+function iniciarSecion(){
+    let usuarios = [
+
+            {
+
+                nombre: "Valentian",
+                email: "valentnaran@gmail.com",
+                clave : "123abc",
+                rol : "administrador"
+            },
+
+               {
+
+                nombre: "Karen",
+                email: "karen@gmail.com",
+                clave : "123abc",
+                rol : "administrador"
+            },
+
+               {
+
+                nombre: "Antonia",
+                email: "antonia@gmail.com",
+                clave : "123abc",
+                rol : "administrador"
+            }
+
+            
+
+    ];
+
+
+    let correoIngresado = prompt("ingrese su correo :");
+    let claveIngresada = prompt("ingrese su contraseña :");
+    let usuarioEncontrado = null;
+
+   for (let i = 0; i < usuarios.length; i ++) {
+
+    if (
+        usuarios[i].email === correoIngresado &&
+        usuarios [i].clave === claveIngresada 
+    ) {
+        usuarioEncontrado = usuarios[i];
+        break;
+    // el break rompe el bucle for
+        
+    }
+   
+    
+   }
+
+   if (usuarioEncontrado ) {
+    alert("Bienvenido " + usuarioEncontrado.rol + " " + usuarioEncontrado.nombre)
+
+   }
+
+   else{
+    alert("Datos incorrectos, verifique o registrese");
+   }
+
+}
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="iniciarSecion-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+         <section id="cont23">
+            
+            <h1>21. Inicio de secion dinamico  </h1>
+        
+            <h2>Ejercicios con arreglos.</h2>
+            <p>Este sistema proporciona un inicio de secion dinamico.  
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Nombre.</li></p>
+                <p><li>Email.</li></p>
+                <p><li>Clave.</li></p>
+                <p><li>Rol.</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se solicita el nombre,email, clave y rol del usuario, con los arreglos,validamos los datos de los diferentes objetos validados en los objetos del usuario.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>En caso de tener la contraseña y el usuario validos el usuario podra acceder a la pagina.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+                function iniciarSecionDinamico() {
+    alert("Este es un  sistema de inicio de secion dinamico.");
+
+// PASO 1 CREAR ARREGLO VACIO DE USUARIOS Y SOLICITAR LA CANTIDAD
+    let usuarios = [];
+    let cantidadUsuarios = parseInt(prompt("Ingrese la cantidad de usuarios que quiere que tenga el sistema"));
+
+    // PASO 2 SOLICITar los diferentes datos de los usuarios segun la cantidad definida
+
+    for (let  i = 0 ; i < cantidadUsuarios; i++) {
+        let  variableNombre = prompt("Ingrese el nombre del usuario N");
+            let  variableEmail = prompt("Ingrese el correo del usuario N");
+              let  variableClave = prompt("Ingrese la clave del usuario N");
+            let  variableRol = prompt("Ingrese el rol del usuario N");
+
+
+
+            // paso 3 creamos el objeto y lo agregamos al objeto
+            usuarios.push(
+
+                {
+                    nombre : variableNombre,
+                    email : variableEmail,
+                    clave : variableClave,
+                    rol : variableRol
+                }
+            )
+             
+         
+    }
+
+
+    // PASO 4 SOLICITAMOS LAS CREDENCIALES DE ACCESO
+
+    let correoIngresado = prompt("ingrese el correo con el que desea iniciar secion ");
+    let claveIngresada = prompt("ingrese la clave con la que desea iniciar secion");
+
+    let usuarioEncontrado = null;  
+
+    // PASO 5 VALIDAR LOS DATOS DE LOS DIFERENTES OBJETOS VALIDADOS EN EL ARREGLO USUARIO
+
+    for (let i = 0; i < usuarios.length; i++) {
+        if (
+            usuarios[i].email === correoIngresado &&
+            usuarios[i].clave === claveIngresada
+        ) {
+            usuarioEncontrado = usuarios[i];
+            break;
+        }
+        
+    }
+
+    if (usuarioEncontrado) {
+        alert("Bienvenido " + usuarioEncontrado.rol + " " + usuarioEncontrado.nombre);  
+    }     
+    else {
+        alert("Usuario y contraseña invalidos");
+
+    
+}
+}
+
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="iniciarSecionDinamico-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+        <section id="cont24">
+            
+            <h1>22.Registro de notas y cálculo del promedio general </h1>
+        
+            <h2>Ejercicios con Arreglos </h2>
+            <p>Descripción: 
+El sistema solicita ingresar el nombre de un estudiante y luego permite registrar las notas de 5 materias. Al 
+finalizar, muestra cada materia con su respectiva nota y calcula el promedio general. Si alguna nota es 
+inferior a 3.0, el estudiante queda en riesgo académico.   
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Nombre del estudiante</li></p>
+                <p><li>Calificaciones del estudiante</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se registran las notas usando un arreglo y luego se calcula el promedio.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>El sistema arroja una salida con los datos estudiantiles del estudiante.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+function registroNotas() {
+    alert("Este sistema permite registrar notas y calcular el promedio general.");
+
+    let nombre = prompt("Ingrese el nombre del estudiante:");
+    let cantidadNotas = parseInt(prompt("¿Cuántas notas vas a registrar?"));
+
+    let notas = [];
+    let sumaNotas = 0;
+    let enRiesgo = false;
+
+    for (let i = 0; i < cantidadNotas; i++) {
+        let nota = parseFloat(prompt("Ingrese la nota #" + (i + 1) + ":"));
+        notas.push(nota);
+        sumaNotas += nota;
+        if (nota < 3.0) {
+            enRiesgo = true;
+        }
+    }
+
+    let promedio = sumaNotas / cantidadNotas;
+
+    // Mostrar todas las notas
+    let mensajeNotas = "Notas del estudiante " + nombre + ":\n";
+    for (let i = 0; i < notas.length; i++) {
+        mensajeNotas += "Nota #" + (i + 1) + ": " + notas[i] + "\n";
+    }
+
+    mensajeNotas += "\nPromedio general: " + promedio.toFixed(2) + "\n";
+
+    // Agregar mensaje según promedio
+    if (promedio >= 4.5) {
+        mensajeNotas += "¡Excelente trabajo!";
+    } else if (promedio >= 3.5) {
+        mensajeNotas += "Buen trabajo, sigue así.";
+    } else if (promedio >= 3.0) {
+        mensajeNotas += "Aprobaste, pero puedes mejorar.";
+    } else {
+        mensajeNotas += "Estás en riesgo académico.";
+    }
+
+    // Agregar si hay nota baja
+    if (enRiesgo) {
+        mensajeNotas += " Tienes al menos una nota menor a 3.0.";
+    }
+
+    // Mostrar resultado final
+    alert(mensajeNotas);
+}
+
+                </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="notas-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+         <section id="cont25">
+            
+            <h1>23. Inventario básico de productos  </h1>
+        
+            <h2>Ejercicios con Arreglos </h2>
+            <p>Descripción: 
+Se simula un inventario con una lista de productos. Cada producto tiene nombre y cantidad disponible. El 
+usuario puede consultar productos, vender (restar) o reabastecer (sumar). El sistema se actualiza tras cada 
+operación y permite realizar múltiples acciones hasta que se decida salir.    
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Nombre del producto</li></p>
+                <p><li>Cantidad del producto</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se usa un arreglo de objetos para simular el inventario con un bucle que permita realizar varias acciones.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Arroja un inventario de salidas.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+                function inventarioProductos() {
+    alert("Sistema de inventario basico.");
+    let n = parseInt(prompt("¿Cuantos productos vas a registrar?"));
+    let inventario = [];
+
+    for (let i = 0; i < n; i++) {
+        let nombre = prompt("Nombre del producto #" + (i + 1) + ":");
+        let precio = parseFloat(prompt("Precio de " + nombre + ":"));
+        let cantidad = parseInt(prompt("Cantidad de " + nombre + ":"));
+        inventario.push({ nombre, precio, cantidad });
+    }
+
+    let opcion;
+    do {
+        opcion = prompt(
+            "Elige una opción:\n1. Ver inventario\n2. Vender\n3. Reabastecer\n4. Salir"
+        );
+
+        if (opcion === "1") {
+            let mensaje = "Inventario:\n";
+            for (let i = 0; i < inventario.length; i++) {
+                mensaje +=
+                    (i + 1) + ". " +
+                    inventario[i].nombre + " - $" +
+                    inventario[i].precio + " - Cantidad: " +
+                    inventario[i].cantidad + "\n";
+            }
+            alert(mensaje);
+
+        } else if (opcion === "2" || opcion === "3") {
+            let indice = parseInt(prompt("Número del producto:")) - 1;
+            if (indice >= 0 && indice < inventario.length) {
+                let cantidad = parseInt(prompt("Cantidad:"));
+                if (cantidad > 0) {
+                    if (opcion === "2") {
+                        if (cantidad <= inventario[indice].cantidad) {
+                            inventario[indice].cantidad -= cantidad;
+                            alert("Venta realizada.");
+                        } else {
+                            alert("No hay suficiente stock.");
+                        }
+                    } else {
+                        inventario[indice].cantidad += cantidad;
+                        alert("Producto reabastecido.");
+                    }
+                } else {
+                    alert("Cantidad inválida.");
+                }
+            } else {
+                alert("Producto no válido.");
+            }
+
+        } else if (opcion !== "4") {
+            alert("Opción no válida.");
+        }
+    } while (opcion !== "4");
+
+    alert("Fin del programa.");
+}
+
+         </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="inventarioProductos-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+         <section id="cont26">
+            
+            <h1>24. Encuesta de satisfacción con resultados  </h1>
+        
+            <h2>Ejercicios con Arreglos </h2>
+            <p>Descripción: 
+El programa realiza una encuesta a 10 usuarios sobre un servicio (escala de 1 a 5). Al finalizar, muestra 
+cuántas personas votaron por cada número y el promedio de satisfacción general. También indica si la 
+mayoría se mostró satisfecha (4 o más).     
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Votacion</li></p>
+                
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se usan contadores para registrar cuántos votaron por cada número,Se usa un bucle para pedir las 10 calificaciones.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Arroja unos votos calificativos.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+    function encuestaSatisfaccion() {
+    alert("Encuesta de satisfacción: califica del 1 al 5.");
+
+    const respuestas = [];
+    const totalUsuarios = 10;
+
+    for (let i = 0; i < totalUsuarios; i++) {
+        let calificacion = parseInt(prompt("Usuario #" + (i + 1) + ", ingresa tu calificación (1 a 5):"));
+        respuestas.push(calificacion);
+    }
+
+    let conteo = [0, 0, 0, 0, 0];
+    let suma = 0;
+
+    for (let i = 0; i < respuestas.length; i++) {
+        conteo[respuestas[i] - 1]++;
+        suma += respuestas[i];
+    }
+
+    let promedio = suma / totalUsuarios;
+
+    let mensaje = "Resultados de la encuesta:\n";
+    for (let i = 0; i < conteo.length; i++) {
+        mensaje += "Calificación " + (i + 1) + ": " + conteo[i] + " votos\n";
+    }
+    mensaje += "\nPromedio de satisfacción: " + promedio + "\n";
+
+    let votosSatisfechos = conteo[3] + conteo[4];
+    if (votosSatisfechos > totalUsuarios / 2) {
+        mensaje += "La mayoría se mostró satisfecha.";
+    } else {
+        mensaje += "La mayoría no se mostró satisfecha.";
+    }
+
+    alert(mensaje);
+}
+
+         </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="encuesta-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+        <section id="cont27">
+            
+            <h1>25. Análisis de temperaturas semanales   </h1>
+        
+            <h2>Ejercicios con Arreglos </h2>
+            <p>Descripción: 
+Se proporciona un arreglo con las temperaturas registradas durante una semana: 
+[22, 24, 21, 23, 25, 26, 22]. 
+El programa debe calcular la temperatura promedio, mostrar la más alta, la más baja, y cuántos días 
+superaron los 23 grados.    
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+              
+                
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se recorre el arreglo para calcular la temperatura y asi encontrar la mas alta y la mas baja y contar los dias con temperatura mayor a 23</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Tabla de temperatura.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+ function analisisTemperaturas() {
+    let temperaturas = [22, 24, 21, 23, 25, 26, 22];
+
+    let suma = 0;
+    let max = temperaturas[0];
+    let min = temperaturas[0];
+    let diasMayor23 = 0;
+
+    for (let i = 0; i < temperaturas.length; i++) {
+        let temp = temperaturas[i];
+        suma += temp;
+
+        if (temp > max) {
+            max = temp;
+        }
+
+        if (temp < min) {
+            min = temp;
+        }
+
+        if (temp > 23) {
+            diasMayor23++;
+        }
+    }
+
+    let promedio = suma / temperaturas.length;
+
+    let mensaje = "Analisis de temperaturas semanales:\n";
+    mensaje += "Temperatura promedio: " + promedio + "\n";
+    mensaje += "Temperatura más alta: " + max + "\n";
+    mensaje += "Temperatura más baja: " + min + "\n";
+    mensaje += "Días con temperatura mayor a 23 grados: " + diasMayor23;
+
+    alert(mensaje);
+}
+
+         </code>
+            </pre>
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="temperatura-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+         <section id="cont28">
+            
+            <h1>26.Registro de usuario y validación de acceso  </h1>
+        
+            <h2>Ejercicios con Objetos  </h2>
+            <p>Descripción: 
+El sistema permite registrar un usuario (nombre, correo, contraseña). Luego, pide que se inicien sesión 
+ingresando los datos. Si coinciden, se da acceso. Si no, se permite reintentar hasta 3 veces.  
+</p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Nombre </li></p>
+                <p><li>Correo</li></p>
+                <p><li>Contraseña</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se guarda la información del usuario en un objeto.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Si ingresa bien la informacion lograra acceder a su nueva cuenta.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+function registroYValidacion() {
+    alert("Registro de usuario.");
+
+    // Registrar usuario
+    let usuario = {
+        nombre: prompt("Ingresa tu nombre:"),
+        correo: prompt("Ingresa tu correo:"),
+        contrasena: prompt("Ingresa tu contraseña:")
+    };
+
+    alert("Usuario registrado. Ahora inicia sesión.");
+
+    let intentos = 0;
+    let accesoConcedido = false;
+
+    while (intentos < 3 && !accesoConcedido) {
+        let correoInput = prompt("Correo:");
+        let contrasenaInput = prompt("Contraseña:");
+
+        if (correoInput === usuario.correo && contrasenaInput === usuario.contrasena) {
+            accesoConcedido = true;
+        } else {
+            intentos++;
+            alert("Datos incorrectos. Intento " + intentos + " de 3.");
+        }
+    }
+
+    if (accesoConcedido) {
+        alert("¡Acceso concedido! Bienvenido, " + usuario.nombre + ".");
+    } else {
+        alert("Has sido bloqueado por 3 intentos fallidos.");
+    }
+}
+
+                </code>
+            </pre>
+            
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="registro-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+         <section id="cont29">
+            
+            <h1>27.Agenda de contactos   </h1>
+        
+            <h2>Ejercicios con Objetos  </h2>
+            <p>Descripción: 
+Crear un sistema donde el usuario puede registrar hasta 5 contactos, cada uno con nombre, número y 
+correo. Luego, puede consultar un contacto por nombre y editar sus datos si lo desea. 
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Nombre </li></p>
+                <p><li>Numero</li></p>
+                <p><li>Correo</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se usan objetos para representar cada contacto y los contactos se guardan en un arreglo.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Le permite agendar sus contactos.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+function agendaContactos() {
+    alert("Este sistema le permite agendar contactos");
+    alert("Agenda: registra hasta 5 contactos.");
+
+    let contactos = [];
+
+    for (let i = 0; i < 5; i++) {
+        let nombre = prompt("Nombre del contacto #" + (i + 1) + ":");
+        let numero = prompt("Número del contacto #" + (i + 1) + ":");
+        let correo = prompt("Correo del contacto #" + (i + 1) + ":");
+
+        contactos.push({ nombre: nombre, numero: numero, correo: correo });
+    }
+
+    let buscar = prompt("Ingresa el nombre del contacto a buscar:");
+
+    let encontrado = null;
+    for (let i = 0; i < contactos.length; i++) {
+        if (contactos[i].nombre === buscar) {
+            encontrado = contactos[i];
+            break;
+        }
+    }
+
+    if (encontrado) {
+        alert("Contacto encontrado:\nNombre: " + encontrado.nombre + "\nNúmero: " + encontrado.numero + "\nCorreo: " + encontrado.correo);
+
+        let editar = prompt("¿Quieres editar este contacto? (sí/no)");
+        if (editar === "sí" || editar === "si") {
+            encontrado.nombre = prompt("Nuevo nombre:", encontrado.nombre);
+            encontrado.numero = prompt("Nuevo número:", encontrado.numero);
+            encontrado.correo = prompt("Nuevo correo:", encontrado.correo);
+
+            alert("Contacto actualizado.");
+        }
+    } else {
+        alert("Contacto no encontrado.");
+    }
+}
+
+                </code>
+            </pre>
+            
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="contactos-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+          <section id="cont30">
+            
+            <h1>28.Sistema de compras con carrito    </h1>
+        
+            <h2>Ejercicios con Objetos  </h2>
+            <p>Descripción: 
+El usuario puede agregar productos a un carrito de compras. Cada producto es un objeto con nombre, 
+precio y cantidad. Al finalizar, se muestra el total a pagar y un resumen de los productos. </p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Nombre del producto </li></p>
+                <p><li>Precio unitario</li></p>
+                <p><li>Cantidad</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Cada producto se guarda como un objeto y todos los productos se almacenan en un arreglo.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Tiene una salida con los productos del carrito de compras.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+function sistemaCompras() {
+    alert("Sistema de compras,agrega productos al carrito.");
+
+    let carrito = [];
+    let agregarMas = true;
+
+    while (agregarMas) {
+        let nombre = prompt("Nombre del producto:");
+        let precio = parseFloat(prompt("Precio unitario:"));
+        let cantidad = parseInt(prompt("Cantidad:"));
+
+        carrito.push({ nombre: nombre, precio: precio, cantidad: cantidad });
+
+        let respuesta = prompt("¿Quieres agregar otro producto? (sí/no)");
+        if (respuesta !== "sí" && respuesta !== "si") {
+            agregarMas = false;
+        }
+    }
+
+    let total = 0;
+    let resumen = "Resumen de tu carrito:\n";
+
+    for (let i = 0; i < carrito.length; i++) {
+        let producto = carrito[i];
+        let subtotal = producto.precio * producto.cantidad;
+        total += subtotal;
+        resumen += producto.nombre + " - Precio: " + producto.precio + ", Cantidad: " + producto.cantidad + ", Subtotal: " + subtotal + "\n";
+    }
+
+    resumen += "\nTotal a pagar: " + total;
+
+    alert(resumen);
+}
+
+                </code>
+            </pre>
+            
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="compras-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+         <section id="cont31">
+            
+            <h1>29. Catálogo de películas </h1>
+        
+            <h2>Ejercicios con Objetos  </h2>
+            <p>Descripción: 
+Se tiene el siguiente arreglo de objetos con información de películas: 
+const peliculas = [<br> 
+{ titulo: "Inception", genero: "Ciencia ficción", año: 2010 }, <br>
+{ titulo: "Titanic", genero: "Romance", año: 1997 }, <br>
+{ titulo: "Interstellar", genero: "Ciencia ficción", año: 2014 }, <br>
+{ titulo: "Coco", genero: "Animación", año: 2017 } 
+]; <br>
+
+El sistema debe permitir al usuario: <br>
+● Buscar películas por género. <br>
+● Listar las películas estrenadas después del año 2000.  </p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Titulo </li></p>
+                <p><li>Genero</li></p>
+                <p><li>Año</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Cada producto se guarda como un objeto y todos los productos se almacenan en un arreglo.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Se filtra el arreglo por genero y año.</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+                function catalogoPeliculas() {
+    alert("Este sistema le permite encontrar una pelicula en base a su genero preferido.");
+    const peliculas = [
+        { titulo: "Inception", genero: "Ciencia ficción", año: 2010 },
+        { titulo: "Titanic", genero: "Romance", año: 1997 },
+        { titulo: "Interstellar", genero: "Ciencia ficción", año: 2014 },
+        { titulo: "Coco", genero: "Animación", año: 2017 }
+    ];
+
+    // Buscar por género
+    let generoBuscado = prompt("Ingrese el género para buscar películas:");
+
+    let peliculasGenero = [];
+    for (let i = 0; i < peliculas.length; i++) {
+        if (peliculas[i].genero === generoBuscado) {
+            peliculasGenero.push(peliculas[i]);
+        }
+    }
+
+    let mensajeGenero = "Películas del género " + generoBuscado + ":\n";
+    if (peliculasGenero.length > 0) {
+        for (let i = 0; i < peliculasGenero.length; i++) {
+            mensajeGenero += peliculasGenero[i].titulo + " (" + peliculasGenero[i].año + ")\n";
+        }
+    } else {
+        mensajeGenero += "No se encontraron películas de ese género.";
+    }
+
+    // Películas posteriores al 2000
+    let peliculasRecientes = [];
+    for (let i = 0; i < peliculas.length; i++) {
+        if (peliculas[i].año > 2000) {
+            peliculasRecientes.push(peliculas[i]);
+        }
+    }
+
+    let mensajeRecientes = "\nPelículas estrenadas después del año 2000:\n";
+    for (let i = 0; i < peliculasRecientes.length; i++) {
+        mensajeRecientes += peliculasRecientes[i].titulo + " (" + peliculasRecientes[i].genero + ", " + peliculasRecientes[i].año + ")\n";
+    }
+
+    alert(mensajeGenero + mensajeRecientes);
+}
+          </code>
+            </pre>
+            
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="peliculas-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+         <section id="cont32">
+            
+            <h1>30. Registro de vehículos y búsqueda por placa </h1>
+        
+            <h2>Ejercicios con Objetos  </h2>
+            <p>Descripción: 
+Se tiene un arreglo de vehículos registrados: 
+const vehiculos = [ <br>
+{ placa: "ABC123", marca: "Toyota", modelo: 2020 }, <br>
+{ placa: "XYZ789", marca: "Chevrolet", modelo: 2018 }, <br>
+{ placa: "LMN456", marca: "Ford", modelo: 2022 } <br>
+]; 
+El programa debe permitir al usuario ingresar una placa, buscar el vehículo correspondiente y mostrar sus 
+datos. Si no existe, debe mostrar un mensaje de error.  </p>
+        
+            <hr>
+        
+            <h2>Análisis:</h2>
+            <p>A continuación se describe el análisis del algoritmo</p>
+            <div class="sub-items">
+                <h3>Datos de entrada:</h3>
+                <p><li>Placa </li></p>
+                <p><li>Marca</li></p>
+                <p><li>Modelo</li></p>
+                
+                
+               
+               
+
+                <h3>Proceso:</h3>
+                <p>Se recorre el arreglo para buscar un vehículo por su placa, si se encuentra se muestran sus datos.</p>
+                
+        
+                <h3>Datos o mensajes de salida:</h3>
+                <p>Datos del vehículo (marca y modelo) si se encuentra y en caso de que no se encuentre aparece "vehiculo no registrado".</p>
+                
+            </div>
+        
+            <hr>
+
+            <h2>Función relizada: </h2>
+
+            <pre>
+            <code>
+            function buscarVehiculoPorPlaca() {
+    alert("Este algoritmo le permite buscar su vehiculo con el numero de su placa.");
+    const vehiculos = [
+        { placa: "ABC123", marca: "Toyota", modelo: 2020 },
+        { placa: "XYZ789", marca: "Chevrolet", modelo: 2018 },
+        { placa: "LMN456", marca: "Ford", modelo: 2022 }
+    ];
+
+    let placaBuscada = prompt("Ingresa la placa del vehículo a buscar:");
+    let encontrado = null;
+
+    for (let i = 0; i < vehiculos.length; i++) {
+        if (vehiculos[i].placa === placaBuscada) {
+            encontrado = vehiculos[i];
+            break;
+        }
+    }
+
+    if (encontrado) {
+        alert("Vehículo encontrado:\nPlaca: " + encontrado.placa + "\nMarca: " + encontrado.marca + "\nModelo: " + encontrado.modelo);
+    } else {
+        alert("No se encontró ningún vehículo con esa placa.");
+    }
+}
+          </code>
+            </pre>
+            
+        
+            
+
+            <h2>Ejecución del algoritmo:</h2>
+            <button id="buscarVehiculoPorPlaca-btn">Click Aquí</button>
+
+            <hr>
+            
+        </section>
+
+
+
+       
+
+
+        
+
+        <div class="botones">
+            <button id="prev">Anterior</button>
+            <button id="next">Siguiente</button>
+        </div>
+        <div class="cont-menu">
+            <button class="btn-menu" id="btn-active"  ><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            <ul id="ul-btns" class="">
+                <li><h3>Menú</h3></li>
+                <li><button id="cap1">Portada</button></li>
+                <li><button id="cap2">Sistema de calificacion detallado.</button></li>
+                <li><button id="cap3">Clasificación de Etapas de la Vida con Contexto Educativo.</button></li>
+                <li><button id="cap4"> Conversor Flexible de Tiempo (Días y Meses).</button></li>
+                <li><button id="cap5">Menu interactivo de operaciones matematicas. </button></li>
+                <li><button id="cap6">Cálculo de Tarifa de Servicio Público con Contexto Residencial .</button></li>
+                <li><button id="cap7">Clasificación del Índice de Masa Corporal (IMC) y Recomendaciones de Salud . </button></li>
+                <li><button id="cap8">Calculadora de Sueldo con Bonificaciones por Hijos en una Empresa.</button></li>
+                <li><button id="cap9">Clasificación por Tipo de Sangre y Compatibilidad de Donación en un Banco de 
+Sangre. </button></li>
+                <li><button id="cap10">Calculadora de Notas con Nivel de Desempeño Detallado en un Curso </button></li>
+                 <li><button id="cap11">Descuento por Tipo de Cliente en una Tienda con Detalles de la Compra . </button></li>
+                 <li><button id="cap12"> Frutas.</button></li>
+                 <li><button id="cap13">Contador de Números Positivos y Negativos. </button></li>
+                 <li><button id="cap14">Validador de Contraseña con Intentos Limitados . </button></li>
+                 <li><button id="cap15">Acumulador de Compras hasta Monto Límite. </button></li>
+                 <li><button id="cap16">Ingreso de Estudiantes hasta Cupo Máximo. </button></li>
+                 <li><button id="cap17">Tabla de Multiplicar Personalizada. </button></li>
+                 <li><button id="cap18">Suma de los Primeros N Números Naturales. </button></li>
+                 <li><button id="cap19">Contador de Caracteres en Palabras. </button></li>
+                 <li><button id="cap20">Generador de Secuencia de Números Pares. </button></li>
+                 <li><button id="cap21">Practica objetos. </button></li>
+                 <li><button id="cap22">Ejercicio de usuarios. </button></li>
+                 <li><button id="cap23">Inicio de secion dinamico. </button></li>
+                 <li><button id="cap24">Registro de notas y cálculo del promedio general. </button></li>
+                 <li><button id="cap25">Inventario básico de productos. </button></li>
+                 <li><button id="cap26">Encuesta de satisfacción con resultados. </button></li>
+                 <li><button id="cap27">Analisis de temperaturas semanales. </button></li>
+                  <li><button id="cap28">Registro de usuario y validacion de acceso. </button></li>
+                   <li><button id="cap29">Agenda de contactos. </button></li>
+                   <li><button id="cap30">Sistema de compras con carrito. </button></li>
+                   <li><button id="cap31">Catalogo de peliculas. </button></li>
+                   <li><button id="cap32">Registro de vehículos y búsqueda por placa . </button></li>
+
+
+
+                  
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Puedes encontrarme en:</p>
+        <ul class="social-links">
+            <li><a href="https://github.com/" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank"><i
+                        class="fab fa-linkedin"></i> LinkedIn</a></li>
+            
+            <li><a href="mailto:tucorrero@gmail.com"><i class="fas fa-envelope"></i> Correo Electrónico</a></li>
+        </ul>
+        <p class="copyright">&copy; 2025 Valentina Palacios - Web developer</p>
+    </footer>
+
+
+
+
+    <script src="js/scripts.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
